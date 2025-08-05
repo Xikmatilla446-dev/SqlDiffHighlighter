@@ -1,0 +1,225 @@
+.container {
+  padding: 20px;
+  max-width: 1400px;
+  margin: 0 auto;
+  min-height: 100vh;
+  background-color: #f5f5f5;
+}
+
+.mainCard {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  
+  .ant-card-head {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border-radius: 8px 8px 0 0;
+    
+    .ant-card-head-title {
+      color: white;
+      font-size: 1.2rem;
+      font-weight: 600;
+    }
+  }
+}
+
+.fullWidth {
+  width: 100%;
+}
+
+.textArea {
+  font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+  font-size: 13px;
+  line-height: 1.4;
+  
+  &:focus {
+    border-color: #667eea;
+    box-shadow: 0 0 0 2px rgba(102, 126, 234, 0.2);
+  }
+}
+
+.diffPanel {
+  height: 100%;
+  
+  .ant-card-head {
+    background-color: #fafafa;
+    border-bottom: 1px solid #e8e8e8;
+  }
+  
+  .ant-card-body {
+    padding: 16px;
+    max-height: 400px;
+    overflow-y: auto;
+  }
+}
+
+.diffContent {
+  font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+  font-size: 13px;
+  line-height: 1.6;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+.diffText {
+  margin: 0;
+  
+  .ant-typography {
+    margin: 0;
+  }
+}
+
+// Diff highlighting styles
+.unchanged {
+  background-color: #f8f9fa;
+  padding: 2px 4px;
+  border-radius: 3px;
+  margin: 1px;
+  display: inline-block;
+  min-height: 1.2em;
+  
+  &:empty::before {
+    content: '\00a0'; // Non-breaking space for empty elements
+  }
+}
+
+.changed {
+  background-color: #ffebee;
+  color: #c62828;
+  font-weight: 600;
+  padding: 2px 4px;
+  border-radius: 3px;
+  margin: 1px;
+  display: inline-block;
+  border: 1px solid #ffcdd2;
+  min-height: 1.2em;
+  
+  &:empty::before {
+    content: '\00a0';
+  }
+}
+
+.added {
+  background-color: #e8f5e8;
+  color: #2e7d32;
+  font-weight: 600;
+  padding: 2px 4px;
+  border-radius: 3px;
+  margin: 1px;
+  display: inline-block;
+  border: 1px solid #c8e6c9;
+  min-height: 1.2em;
+  
+  &:empty::before {
+    content: '\00a0';
+  }
+}
+
+.removed {
+  background-color: #fff3e0;
+  color: #f57c00;
+  font-weight: 600;
+  padding: 2px 4px;
+  border-radius: 3px;
+  margin: 1px;
+  display: inline-block;
+  border: 1px solid #ffcc02;
+  text-decoration: line-through;
+  min-height: 1.2em;
+  
+  &:empty::before {
+    content: '\00a0';
+  }
+}
+
+.legend {
+  .ant-card-body {
+    padding: 12px 16px;
+  }
+  
+  span {
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: 500;
+    display: inline-block;
+    text-align: center;
+    min-width: 80px;
+  }
+}
+
+// Responsive design
+@media (max-width: 768px) {
+  .container {
+    padding: 10px;
+  }
+  
+  .diffPanel {
+    .ant-card-body {
+      max-height: 300px;
+    }
+  }
+  
+  .diffContent {
+    font-size: 12px;
+  }
+  
+  .textArea {
+    font-size: 12px;
+  }
+  
+  .legend {
+    span {
+      min-width: 60px;
+      font-size: 11px;
+      margin-bottom: 4px;
+    }
+  }
+}
+
+@media (max-width: 576px) {
+  .container {
+    padding: 5px;
+  }
+  
+  .mainCard {
+    .ant-card-head-title {
+      font-size: 1rem;
+    }
+  }
+  
+  .diffPanel {
+    .ant-card-body {
+      max-height: 250px;
+      padding: 12px;
+    }
+  }
+  
+  .diffContent {
+    font-size: 11px;
+    line-height: 1.4;
+  }
+  
+  .textArea {
+    font-size: 11px;
+  }
+}
+
+// Custom scrollbar for diff panels
+.diffPanel .ant-card-body::-webkit-scrollbar {
+  width: 6px;
+}
+
+.diffPanel .ant-card-body::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 3px;
+}
+
+.diffPanel .ant-card-body::-webkit-scrollbar-thumb {
+  background: #c1c1c1;
+  border-radius: 3px;
+  
+  &:hover {
+    background: #a8a8a8;
+  }
+}
