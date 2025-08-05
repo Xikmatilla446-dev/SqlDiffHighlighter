@@ -1,5 +1,9 @@
-import SQLDiffHighlighter from "../sql-diff-highlighter"
+import SQLDiffHighlighter from "../components/SQLDiffHighlighter"
 
-export default function Page() {
-  return <SQLDiffHighlighter />
+export default function Home() {
+  return (
+    <main>
+      <SQLDiffHighlighter />
+    </main>
+  )
 }

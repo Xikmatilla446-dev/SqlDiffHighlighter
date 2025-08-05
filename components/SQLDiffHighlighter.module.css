@@ -1,0 +1,569 @@
+.container {
+  padding: 24px;
+  max-width: 1400px;
+  margin: 0 auto;
+  min-height: 100vh;
+  background-color: #f5f5f5;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+.mainCard {
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 24px;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+.title {
+  margin: 0 0 8px 0;
+  font-size: 2rem;
+  font-weight: 600;
+  color: #1f2937;
+}
+
+.subtitle {
+  margin: 0;
+  color: #6b7280;
+  font-size: 1rem;
+}
+
+.inputSection {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  margin-bottom: 24px;
+}
+
+.inputGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.inputLabel {
+  font-weight: 600;
+  color: #374151;
+  font-size: 14px;
+}
+
+.sqlInput {
+  width: 100%;
+  min-height: 200px;
+  padding: 12px;
+  border: 2px solid #d1d5db;
+  border-radius: 6px;
+  font-family: "Monaco", "Menlo", "Ubuntu Mono", monospace;
+  font-size: 13px;
+  line-height: 1.4;
+  resize: vertical;
+  background: white;
+  transition: border-color 0.2s;
+}
+
+.sqlInput:focus {
+  outline: none;
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+.controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 24px;
+  margin-bottom: 24px;
+  padding: 16px;
+  background: #f9fafb;
+  border-radius: 6px;
+}
+
+.controlGroup {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.controlLabel {
+  font-weight: 600;
+  color: #374151;
+  font-size: 14px;
+}
+
+.comparisonSelect {
+  padding: 8px 12px;
+  border: 2px solid #d1d5db;
+  border-radius: 6px;
+  background: white;
+  font-size: 14px;
+  cursor: pointer;
+  min-width: 120px;
+}
+
+.comparisonSelect:focus {
+  outline: none;
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+.toggleButton {
+  padding: 8px 16px;
+  border: 2px solid #d1d5db;
+  border-radius: 6px;
+  background: white;
+  color: #374151;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.toggleButton:hover {
+  border-color: #9ca3af;
+  background: #f9fafb;
+}
+
+.toggleButtonActive {
+  border-color: #3b82f6;
+  background: #3b82f6;
+  color: white;
+}
+
+.stats {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  margin-bottom: 16px;
+  padding: 12px;
+  background: #f8f9fa;
+  border-radius: 6px;
+}
+
+.statItem {
+  display: flex;
+  align-items: center;
+}
+
+.addedStat {
+  color: #059669;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.removedStat {
+  color: #dc2626;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.modifiedStat {
+  color: #d97706;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.diffContainer {
+  margin-bottom: 24px;
+  border: 1px solid #e5e7eb;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.diffHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 20px;
+  border-bottom: 1px solid #e5e7eb;
+  background: #f9fafb;
+}
+
+.diffTitle {
+  margin: 0;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #374151;
+}
+
+.copyAllButton {
+  padding: 6px 12px;
+  border: 1px solid #d1d5db;
+  border-radius: 4px;
+  background: white;
+  color: #374151;
+  font-size: 12px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.copyAllButton:hover {
+  background: #f3f4f6;
+  border-color: #9ca3af;
+}
+
+.diffContent {
+  max-height: 600px;
+  overflow-y: auto;
+  font-family: "Monaco", "Menlo", "Ubuntu Mono", monospace;
+  font-size: 13px;
+  line-height: 1.4;
+}
+
+.diffBlock {
+  border-bottom: 1px solid #f3f4f6;
+}
+
+.diffBlock:last-child {
+  border-bottom: none;
+}
+
+.diffLine {
+  display: flex;
+  align-items: flex-start;
+  min-height: 24px;
+  position: relative;
+}
+
+.diffLine:hover {
+  background-color: rgba(0, 0, 0, 0.02);
+}
+
+.diffLine:hover .copyButton {
+  opacity: 1;
+}
+
+.lineNumbers {
+  display: flex;
+  flex-direction: column;
+  min-width: 80px;
+  padding: 2px 8px;
+  background: #f8f9fa;
+  border-right: 1px solid #e5e7eb;
+  font-size: 11px;
+  color: #6b7280;
+  text-align: right;
+  user-select: none;
+}
+
+.originalLineNumber,
+.modifiedLineNumber {
+  height: 12px;
+  line-height: 12px;
+}
+
+.lineContentContainer {
+  flex: 1;
+  padding: 2px 8px;
+  overflow-x: auto;
+}
+
+.sideBySide {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+
+.originalSide,
+.modifiedSide,
+.singleSide {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  min-height: 20px;
+}
+
+.diffPrefix {
+  font-weight: bold;
+  min-width: 12px;
+  text-align: center;
+  user-select: none;
+}
+
+.lineContent {
+  flex: 1;
+  word-break: break-all;
+}
+
+.lineText {
+  white-space: pre-wrap;
+}
+
+.copyButton {
+  position: absolute;
+  right: 8px;
+  top: 2px;
+  opacity: 0;
+  transition: opacity 0.2s;
+  z-index: 1;
+  padding: 2px 6px;
+  border: 1px solid #d1d5db;
+  border-radius: 3px;
+  background: white;
+  font-size: 10px;
+  cursor: pointer;
+}
+
+.copyButton:hover {
+  background: #f3f4f6;
+}
+
+/* Line type styles */
+.addedLine {
+  background-color: #f0fdf4;
+}
+
+.addedLine .diffPrefix {
+  color: #059669;
+}
+
+.addedLine .lineNumbers {
+  background-color: #dcfce7;
+}
+
+.removedLine {
+  background-color: #fef2f2;
+}
+
+.removedLine .diffPrefix {
+  color: #dc2626;
+}
+
+.removedLine .lineNumbers {
+  background-color: #fecaca;
+}
+
+.removedLine .lineText {
+  text-decoration: line-through;
+  opacity: 0.8;
+}
+
+.modifiedLine {
+  background-color: #fffbeb;
+}
+
+.modifiedLine .originalSide {
+  background-color: #fef2f2;
+  padding: 2px 4px;
+  border-radius: 3px;
+  margin-bottom: 2px;
+}
+
+.modifiedLine .originalSide .diffPrefix {
+  color: #dc2626;
+}
+
+.modifiedLine .originalSide .lineText {
+  text-decoration: line-through;
+  opacity: 0.8;
+}
+
+.modifiedLine .modifiedSide {
+  background-color: #f0fdf4;
+  padding: 2px 4px;
+  border-radius: 3px;
+}
+
+.modifiedLine .modifiedSide .diffPrefix {
+  color: #059669;
+}
+
+.modifiedLine .lineNumbers {
+  background-color: #fef3c7;
+}
+
+.unchangedLine {
+  background-color: #ffffff;
+}
+
+.unchangedLine .diffPrefix {
+  color: #9ca3af;
+}
+
+.unchangedCollapse {
+  margin: 8px 0;
+}
+
+.collapseDetails {
+  border: 1px solid #e5e7eb;
+  border-radius: 4px;
+  background: #f8f9fa;
+}
+
+.collapseSummary {
+  padding: 8px 16px;
+  cursor: pointer;
+  font-size: 12px;
+  color: #6b7280;
+  user-select: none;
+}
+
+.collapseSummary:hover {
+  background: #f3f4f6;
+}
+
+.collapseContent {
+  border-top: 1px solid #e5e7eb;
+}
+
+.legend {
+  padding: 16px;
+  background: #f8f9fa;
+  border-radius: 6px;
+}
+
+.legendTitle {
+  margin: 0 0 12px 0;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #374151;
+}
+
+.legendItems {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.legendItem {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 14px;
+  color: #374151;
+}
+
+.addedIndicator,
+.removedIndicator,
+.modifiedIndicator,
+.unchangedIndicator {
+  width: 12px;
+  height: 12px;
+  border-radius: 2px;
+  display: inline-block;
+}
+
+.addedIndicator {
+  background-color: #059669;
+}
+
+.removedIndicator {
+  background-color: #dc2626;
+}
+
+.modifiedIndicator {
+  background-color: #d97706;
+}
+
+.unchangedIndicator {
+  background-color: #9ca3af;
+}
+
+/* Custom scrollbar */
+.diffContent::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+.diffContent::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 4px;
+}
+
+.diffContent::-webkit-scrollbar-thumb {
+  background: #c1c1c1;
+  border-radius: 4px;
+}
+
+.diffContent::-webkit-scrollbar-thumb:hover {
+  background: #a8a8a8;
+}
+
+/* Responsive design */
+@media (max-width: 1024px) {
+  .container {
+    padding: 16px;
+  }
+
+  .inputSection {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .controls {
+    flex-direction: column;
+    gap: 12px;
+    align-items: center;
+  }
+
+  .stats {
+    flex-direction: column;
+    gap: 8px;
+    text-align: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 12px;
+  }
+
+  .title {
+    font-size: 1.5rem;
+  }
+
+  .lineNumbers {
+    min-width: 60px;
+    font-size: 10px;
+  }
+
+  .diffContent {
+    font-size: 12px;
+    max-height: 400px;
+  }
+
+  .sqlInput {
+    font-size: 12px;
+    min-height: 150px;
+  }
+
+  .sideBySide .originalSide,
+  .sideBySide .modifiedSide {
+    font-size: 11px;
+  }
+
+  .legendItems {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 8px;
+  }
+
+  .diffHeader {
+    flex-direction: column;
+    gap: 8px;
+    align-items: flex-start;
+  }
+
+  .lineNumbers {
+    min-width: 50px;
+  }
+
+  .diffContent {
+    font-size: 11px;
+  }
+
+  .copyButton {
+    position: static;
+    opacity: 1;
+    margin-top: 4px;
+  }
+}
